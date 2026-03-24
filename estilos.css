@@ -1,0 +1,106 @@
+/* ── BODY ──────────────────────────────────────────────
+   Centramos todo el contenido vertical y horizontalmente
+   usando Flexbox sobre toda la altura de la pantalla     */
+body {
+  margin: 0;                    /* Elimina el margen que ponen los navegadores por defecto */
+  height: 100vh;                /* 100% del alto de la pantalla (vh = viewport height) */
+  display: flex;                /* Activa Flexbox: el body ahora distribuye sus hijos */
+  justify-content: center;      /* Centra horizontalmente dentro del flex */
+  align-items: center;          /* Centra verticalmente dentro del flex */
+  background-color: #f0f2f5;    /* Fondo gris claro típico de páginas de login */
+}
+
+/* ── TARJETA ────────────────────────────────────────────
+   El recuadro blanco que contiene todo el formulario     */
+.contenedor {
+  background-color: white;      /* Fondo blanco que contrasta con el gris del body */
+  padding: 40px;                /* Espacio interno entre el borde y el contenido */
+  border-radius: 8px;           /* Esquinas redondeadas */
+  width: 350px;                 /* Ancho fijo de la tarjeta */
+}
+
+/* ── TÍTULO ─────────────────────────────────────────────
+   El h2 "Iniciar sesión"                                 */
+h2 {
+  text-align: center;           /* Centra el texto dentro de su contenedor */
+  margin-bottom: 24px;          /* Separa el título de los campos de abajo */
+}
+
+/* ── CAMPO ──────────────────────────────────────────────
+   Cada bloque label + input. Usamos flex en columna para
+   que el label quede arriba y el input abajo             */
+.campo {
+  display: flex;                /* Activa Flexbox dentro del campo */
+  flex-direction: column;       /* Apila los hijos en columna (arriba → abajo) */
+  margin-bottom: 16px;          /* Separa este campo del siguiente */
+}
+
+/* ── LABEL ──────────────────────────────────────────────
+   El texto descriptivo encima de cada input              */
+label {
+  font-size: 14px;              /* Tamaño de letra levemente menor al default */
+  margin-bottom: 6px;           /* Pequeño espacio entre el label y su input */
+}
+
+/* ── INPUT (estado normal) ──────────────────────────────
+   Los campos de texto en su estado por defecto           */
+input {
+  padding: 10px;                /* Espacio interno para que el texto no quede pegado al borde */
+  border: 1px solid #ccc;       /* Borde gris finito, sin esto el input no tendría borde */
+  border-radius: 4px;           /* Esquinas levemente redondeadas */
+  font-size: 14px;              /* Mismo tamaño que el label para consistencia visual */
+  outline: none;                /* Elimina el borde azul/naranja que pone el navegador al hacer foco */
+}
+
+/* ── INPUT (estado foco) ────────────────────────────────
+   Se activa SOLO cuando el usuario hace clic en el input.
+   Es un pseudo-selector: el estilo cambia según el estado
+   del elemento, similar a un evento en programación      */
+input:focus {
+  border-color: #0d6efd;        /* Cambia el borde a azul para indicar que ese campo está activo */
+}
+/* ── CONTENEDOR DE BOTONES ──────────────────────────────
+   Agrupa los dos botones en una fila con espacio entre
+   ellos, usando Flexbox igual que hicimos con .campo     */
+.botones {
+  display: flex;                /* Los botones se colocan en fila (por defecto flex es row) */
+  justify-content: space-between; /* Uno pegado a la izquierda, otro a la derecha */
+  margin-top: 24px;             /* Separa los botones de los campos de arriba */
+}
+
+/* ── ESTILO BASE COMPARTIDO ─────────────────────────────
+   Propiedades que comparten los dos botones. Definimos
+   una vez acá en vez de repetirlo en cada uno            */
+button {
+  padding: 10px 24px;           /* 10px arriba/abajo, 24px izquierda/derecha */
+  border: none;                 /* Elimina el borde que traen los botones por defecto */
+  border-radius: 4px;           /* Esquinas redondeadas */
+  font-size: 14px;              /* Tamaño de letra consistente con los inputs */
+  cursor: pointer;              /* El cursor cambia a manito al pasar por encima */
+}
+
+/* ── BOTÓN VOLVER ───────────────────────────────────────
+   Estilo secundario: fondo gris, transmite "acción menor" */
+.btn-volver {
+  background-color: #e0e0e0;    /* Gris claro */
+  color: #333;                  /* Texto gris oscuro */
+}
+
+/* ── BOTÓN VOLVER: hover ────────────────────────────────
+   Se activa cuando el mouse pasa por encima del botón    */
+.btn-volver:hover {
+  background-color: #c8c8c8;    /* Gris más oscuro, da sensación de respuesta */
+}
+
+/* ── BOTÓN SIGUIENTE ────────────────────────────────────
+   Estilo primario: fondo azul, transmite "acción principal" */
+.btn-siguiente {
+  background-color: #0d6efd;    /* Azul */
+  color: white;                 /* Texto blanco para contrastar con el fondo azul */
+}
+
+/* ── BOTÓN SIGUIENTE: hover ─────────────────────────────
+   Se activa cuando el mouse pasa por encima del botón    */
+.btn-siguiente:hover {
+  background-color: #0b5ed7;    /* Azul más oscuro */
+}

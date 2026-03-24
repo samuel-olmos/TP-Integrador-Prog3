@@ -2,16 +2,47 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8">
+    <!-- Adaptá el ancho a la pantalla del dispositivo, necesario para Bootstrap después -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
-
-    <!-- Vinculamos nuestro archivo de estilos -->
+    <!-- Linkeamos nuestro archivo de estilos propio -->
     <link rel="stylesheet" href="estilos.css">
   </head>
   <body>
 
-    
-    <h2>Iniciar sesión</h2>
+    <!-- Tarjeta central de login: este div es el "recuadro blanco" -->
+    <div class="contenedor">
+
+      <h2>Iniciar sesión</h2>
+
+      <!-- Campo de usuario: agrupa label + input como una unidad estilizable -->
+      <div class="campo">
+        <!-- El "for" conecta este label con el input que tiene id="usuario" -->
+        <label for="usuario">Nombre de usuario</label>
+        <!-- type="text" acepta cualquier texto libre -->
+        <input type="text" id="usuario" placeholder="Ingresá tu usuario">
+      </div>
+
+      <!-- Campo de contraseña: igual que el anterior pero oculta los caracteres -->
+      <div class="campo">
+        <label for="contrasena">Contraseña</label>
+        <!-- type="password" muestra puntos en lugar de los caracteres escritos -->
+        <input type="password" id="contrasena" placeholder="Ingresá tu contraseña">
+      </div>
+
+      <!-- Contenedor de los botones, los agrupa como una fila -->
+      <div class="botones">
+
+        <!-- Botón para volver atrás -->
+        <button class="btn-volver">Volver</button>
+
+        <!-- Botón para continuar -->
+        <button class="btn-siguiente">Siguiente</button>
+
+      </div>
+
+
+    </div>
 
   </body>
 </html>
